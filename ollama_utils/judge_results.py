@@ -27,12 +27,12 @@ def judge_results(original_prompt: str, llm_gen_results: str) -> Dict[str, str]:
   try:
 
     messages = [
-        #{"role": "system", "content": "You are an expert at judging or evaluating output from an LLM, when shown the original prompt. You answer for accurate/good with a G and for inaccurate/bad with a B, following by a blank line and then your final reasoning."},
+        #{"role": "system", "content": "You are an expert at judging or evaluating output from an LLM, when shown the original prompt. You answer for accurate/good with a Y and for inaccurate/bad with a N, following by a blank line and then your final reasoning."},
         {"role": "user", "content": f"Evaluate if this original prompt:\n\n{original_prompt}\n\nIs accurately answered by this output (Answer Y or N, followed by your reason):\n\n{llm_gen_results}\n"},
     ]
 
     response = client.chat.completions.create(
-                 model="ollama:marco-o1",  # "ollama:llama3.2:latest",
+                 "ollama:llama3.2:latest", # model="ollama:marco-o1",
                  messages=messages,
                  temperature=0.0)
     r = response.choices[0].message.content.strip()
