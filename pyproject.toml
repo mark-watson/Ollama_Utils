@@ -11,10 +11,15 @@ authors = [
     {name = "Mark Watson", email = "markw@markwatson.com"}
 ]
 license = {file = "LICENSE"}
+
 dependencies = [
-    # Add your package dependencies here, e.g., "numpy >= 1.21.0"
-]
-requires-python = ">=3.7"
+ "requests",
+ "beautifulsoup4",
+ "aisuite[ollama]",
+ "ollama",
+] 
+
+requires-python = ">=3.10"
 
 [project.urls]
 Homepage = "https://github.com/mark-watson/Ollama_Tools"

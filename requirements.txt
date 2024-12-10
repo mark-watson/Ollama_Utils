@@ -3,3 +3,10 @@ beautifulsoup4
 aisuite[ollama]
 httpx
 
+dependencies = [  
+ "requests",  
+ "beautifulsoup4",  
+ "aisuite[ollama]",  
+ "ollama",
+ "httpx"  
+]  
